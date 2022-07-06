@@ -30,42 +30,44 @@ random 函数生成，也可以采用一些有效的随机数生成算法生成�
 
 ## 实验输入数据集
 
-文本数据集：5,1,2,3,7,14,6  
-文件数据集：[数据集](./data/list.txt)
+![image](https://github.com/Starry-jx/homewrok_template/blob/main/%E5%AE%9E%E9%AA%8C%E4%B8%80/%E6%88%AA%E5%9B%BE/100.jpg)
 
 ## 实验内容
 以冒泡排序、合并排序和快速排序算法为例，以生成的随机数作为实验中使
 用的测试数据。对每个算法，记录程序执行中随着测试数据增加算法基本操作执
 行次数，分析并以图形方式展现增长率；对以上三个排序算法，对比随着测试数
 据增加算法增长率变化趋势；测试、验证、对比算法时间复杂度的理论结论。
+
 [experiment.c](experiment_1.c) 算法实现的C语言版本
 ## 实验预期结果与实际结果
-+ 实验预期结果：14
+数组元素个数与三种排序的比较：
+10次 ：
 
-实验过程及实验结果（Java版）
+![image](https://github.com/Starry-jx/homewrok_template/blob/main/%E5%AE%9E%E9%AA%8C%E4%B8%80/%E6%88%AA%E5%9B%BE/10.jpg)
 
-```bash
-gitpod /workspace/homewrok_template (main) $ javac Max.java
-Picked up JAVA_TOOL_OPTIONS:  -Xmx3435m
-gitpod /workspace/homewrok_template (main) $ java Max
-Picked up JAVA_TOOL_OPTIONS:  -Xmx3435m
-14
+50次：
 
-```
+![image](https://github.com/Starry-jx/homewrok_template/blob/main/%E5%AE%9E%E9%AA%8C%E4%B8%80/%E6%88%AA%E5%9B%BE/50.jpg)
 
-实验过程及实验结果（C版）
+100次：
 
-```bash
-gitpod /workspace/homewrok_template (main) $ gcc -o max.exe max.c
-gitpod /workspace/homewrok_template (main) $ ./max.exe 
-14
+![image](https://github.com/Starry-jx/homewrok_template/blob/main/%E5%AE%9E%E9%AA%8C%E4%B8%80/%E6%88%AA%E5%9B%BE/100.jpg)
 
-```
+500次：
 
-实验过程及实验结果（Python版）
+![image](https://github.com/Starry-jx/homewrok_template/blob/main/%E5%AE%9E%E9%AA%8C%E4%B8%80/%E6%88%AA%E5%9B%BE/500.jpg)
+1000次：
 
-```bash
-gitpod /workspace/homewrok_template (main) $ python max.py 
-14
+![image](https://github.com/Starry-jx/homewrok_template/blob/main/%E5%AE%9E%E9%AA%8C%E4%B8%80/%E6%88%AA%E5%9B%BE/1000.jpg)
 
-```
+5000次：
+
+![image](https://github.com/Starry-jx/homewrok_template/blob/main/%E5%AE%9E%E9%AA%8C%E4%B8%80/%E6%88%AA%E5%9B%BE/5000.jpg)
+
+10000次：
+
+![image](https://github.com/Starry-jx/homewrok_template/blob/main/%E5%AE%9E%E9%AA%8C%E4%B8%80/%E6%88%AA%E5%9B%BE/10000.jpg)
+
+比较结果：
+
+![image](https://github.com/Starry-jx/homewrok_template/blob/main/%E5%AE%9E%E9%AA%8C%E4%B8%80/%E6%88%AA%E5%9B%BE/bijiao.jpg)
