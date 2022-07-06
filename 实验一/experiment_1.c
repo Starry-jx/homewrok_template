@@ -1,10 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
-
 int count1=0;
 int count2=0;
 int count3=0;
+
 void rand_array(int *array,int n) {
     srand((unsigned int)time(NULL));
     for(int i=0; i<n; i++) {
@@ -32,6 +32,7 @@ void BubbleSort (int* array,int n ) {
             count1++;
         }
     }
+    free(a);
 }
 void MergeLists(int* list, int start1, int end1, int start2, int end2) {
     int indexC=0;
@@ -48,7 +49,7 @@ void MergeLists(int* list, int start1, int end1, int start2, int end2) {
             result[indexC]=list[start2];
             start2=start2+1;
         }
-count2++;
+        count2++;
         indexC=indexC+1;
     }
     if (start1<=end1) {
@@ -81,60 +82,75 @@ void MergeSort_t(int* array,int n) {
     int *list=(int*)malloc(n*sizeof(int));
     for(int i=0; i<n; i++)
         list[i]=array[i];
-
     MergeSort(list,0,n-1);
+    free(list);
 }
-void QuickSort(int* a,int start,int end)    {
-    int i,j,temp,x;
-    i=start;
-    j=end;
-    x=a[start];
-    while(i<j) {
-        while(i<j && x<a[j])
+void quick_sort(int* num, int low, int high ) {
+    int i,j,temp;
+    int tmp;
+
+    i = low;
+    j = high;
+    tmp = num[low];
+
+    if(i > j) {
+        return;
+    }
+
+    while(i != j) {
+        while(num[j] >= tmp && j > i) {
             j--;
-        while(i<j && x>a[i])
+        }
+
+        while(num[i] <= tmp && j > i) {
             i++;
-        if(i<j) {
-            temp=a[j];
-            a[j]=a[i];
-            a[i]=temp;
+        }
+
+        if(j > i) {
+            temp = num[j];
+            num[j] = num[i];
+            num[i] = temp;
         }
         count3++;
     }
-    temp=x;
-    x=a[i];
-    a[i]=temp;
-    if(start<j)
-        QuickSort(a,start,j-1);
-    if(i<end)
-        QuickSort(a,j+1,end);
+
+    num[low] = num[i];
+    num[i] = tmp;
+
+    quick_sort(num,low,i-1);
+    quick_sort(num,i+1,high);
 }
 void QuickSort_t(int* array,int n) {
     int *list=(int*)malloc(n*sizeof(int));
     for(int i=0; i<n; i++)
         list[i]=array[i];
-    QuickSort(list,0,n-1);
+    quick_sort(list,0,n-1);
+    free(list);
 }
-
 int main() {
     int *array;
     int n;
     printf("请输入排序元素个数：");
     scanf("%d",&n);
     array=(int*)malloc(n*sizeof(int));
+
     rand_array(array,n);
-    BubbleSort(array,n);
-    MergeSort_t(array, n);
-    QuickSort_t(array, n);
-    printf("冒泡排序比较次数%d\n",count1);
-     printf("合并排序比较次数%d\n",count2);
-   printf("快速排序比较次数%d\n",count3);
+/*printf("测试数组：\n");
+for(int i=0;i<n;i++){
+    printf("%d  ",array[i]);
+if(i%15==0&&i!=0)
+        printf("\n");
 }
+    printf("\n\n");*/
+    BubbleSort(array,n);
 
+    MergeSort_t(array, n);
 
+    QuickSort_t(array, n);
 
-
-
-
-
+    printf("冒泡排序比较次数%d\n",count1);
+    printf("合并排序比较次数%d\n",count2);
+    printf("快速排序比较次数%d\n",count3);
+    free(array);
+}
 
