@@ -26,5 +26,19 @@
 展现增长率；测试、验证、对比算法的时间复杂度。
 
 [experiment.c](experiment_2.c) 算法实现的C语言版本
+
 ## 实验预期结果与实际结果
 
+实验结果：
+不同背包，不同物品数量下，结果与运算时间：
+
+![image](https://github.com/Starry-jx/homewrok_template/blob/main/%E5%AE%9E%E9%AA%8C%E4%BA%8C/%E6%88%AA%E5%9B%BE/1.jpg)
+
+![image](https://github.com/Starry-jx/homewrok_template/blob/main/%E5%AE%9E%E9%AA%8C%E4%BA%8C/%E6%88%AA%E5%9B%BE/2.jpg)
+
+![image](https://github.com/Starry-jx/homewrok_template/blob/main/%E5%AE%9E%E9%AA%8C%E4%BA%8C/%E6%88%AA%E5%9B%BE/3.jpg)
+
+算法执行时间比较：
+
+
+![image](https://github.com/Starry-jx/homewrok_template/blob/main/%E5%AE%9E%E9%AA%8C%E4%BA%8C/%E6%88%AA%E5%9B%BE/4.jpg)
